@@ -1,0 +1,119 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "hosts": {
+            "geosite:category-ads-all": [
+                "127.0.0.1"
+            ]
+        },
+        "servers": [
+            "1.1.1.1",
+            {
+                "address": "1.1.1.1",
+                "domains": [
+                    "geolocation-!cn"
+                ],
+                "skipFallback": true
+            },
+            {
+                "address": "223.5.5.5",
+                "domains": [
+                    "geosite:cn",
+                    "geosite:private"
+                ],
+                "skipFallback": true
+            }
+        ]
+    },
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "type": "field",
+                "inboundTag": [
+                    "dns-in"
+                ],
+                "outboundTag": "dns-out"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:category-ads-all"
+                ],
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:geolocation-!cn"
+                ],
+                "outboundTag": "proxy"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:cn",
+                    "geosite:private"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ],
+                "outboundTag": "direct"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10853,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "1.1.1.1",
+                "port": 53,
+                "network": "udp"
+            },
+            "tag": "dns-in"
+        }
+    ],
+    "outbounds": [
+        {
+            // 粘贴你的客户端配置，需要保留 "tag": "proxy"
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        },
+        {
+            "protocol": "dns",
+            "tag": "dns-out"
+        }
+    ]
+}
