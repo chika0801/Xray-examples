@@ -58,7 +58,6 @@
                 "security": "tls",
                 "tlsSettings": {
                     "serverName": "",
-                    "allowInsecure": false,
                     "fingerprint": "chrome"
                 }
             },
