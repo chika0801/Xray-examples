@@ -57,7 +57,7 @@
         {
             "protocol": "dns",
             "settings": {
-                "nonIPQuery": "skip" // 允许非 A/AAAA 的 DNS 查询类型
+                "nonIPQuery": "skip" // 允许非 A/AAAA 的 DNS 记录类型
             },
             "tag": "dns-out"
         }
