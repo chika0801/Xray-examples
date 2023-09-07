@@ -63,12 +63,6 @@
                     "shortId": "6ba85179e30d4fc2" // 与服务端一致
                 }
             },
-            "mux": {
-                "enabled": true,
-                "concurrency": -1,
-                "xudpConcurrency": 16,
-                "xudpProxyUDP443": "reject"
-            },
             "tag": "proxy"
         },
         {
