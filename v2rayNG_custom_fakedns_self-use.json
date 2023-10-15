@@ -1,0 +1,171 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "fakedns",
+            {
+                "address": "fakedns",
+                "domains": [ 
+                        "geosite:cn",
+                        "geosite:private"
+                ],
+                "skipFallback": true
+            },
+            {
+                "address": "https://223.5.5.5/dns-query",
+                "domains": [ 
+                        "geosite:cn",
+                        "geosite:private"
+                ],
+                "skipFallback": true
+            }
+        ]
+    },
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "inboundTag": [
+                    "dns-in"
+                ],
+                "outboundTag": "dns-out"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:category-ads-all"
+                ],
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "domain:mcdn.bilivideo.cn",
+                    "domain:szbdyd.com",
+                    "regexp:cn-[a-zA-Z0-9-]+\\.bilivideo\\.com",
+                    "regexp:[a-zA-Z0-9-]+-pcdn-[a-zA-Z0-9-]+\\.biliapi\\.net"
+                ],
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:geolocation-!cn"
+                ],
+                "outboundTag": "proxy"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:cn",
+                    "geosite:private"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ],
+                "outboundTag": "direct"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "fakedns"
+                ]
+            }
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10853,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "1.1.1.1",
+                "port": 53,
+                "network": "udp"
+            },
+            "tag": "dns-in"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "",
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "serverName": "",
+                    "publicKey": "",
+                    "shortId": ""
+                },
+                "sockopt": {
+                    "tcpMptcp": true,
+                    "tcpNoDelay": true
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": -1,
+                "xudpConcurrency": 16,
+                "xudpProxyUDP443": "reject"
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIPv4"
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            },
+            "tag": "block"
+        },
+        {
+            "protocol": "dns",
+            "settings": {
+                "nonIPQuery": "skip"
+            },
+            "proxySettings": {
+                "tag": "proxy"
+            },
+            "tag": "dns-out"
+        }
+    ]
+}
