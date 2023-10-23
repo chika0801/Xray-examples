@@ -113,6 +113,12 @@
         },
         {
             "protocol": "dns",
+            "settings": {
+                "nonIPQuery": "skip" // 允许非 A/AAAA 的查询，若不写 "settings" 字段，默认值为 "drop"，阻止非 A/AAAA 的查询
+            },
+            "proxySettings": { // 若不写 "proxySettings" 字段，将使用本地 DNS 查询
+                "tag": "proxy" // 非 A/AAAA 的查询使用 "tag": "proxy" 出站，目的地址是 "tag": "dns-in" 中 "settings" 字段的内容，
+            },
             "tag": "dns-out"
         }
     ]
