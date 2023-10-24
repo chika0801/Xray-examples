@@ -1,0 +1,75 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "chika", // 长度为 1-30 字节的任意字符串，或执行 xray uuid 生成
+                        "flow": "xtls-rprx-vision"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "rejectUnknownSni": true,
+                    "minVersion": "1.2",
+                    "certificates": [
+                        {
+                            "ocspStapling": 3600,
+                            "certificateFile": "/etc/ssl/private/fullchain.cer",
+                            "keyFile": "/etc/ssl/private/private.key"
+                        }
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "policy": {
+        "levels": {
+            "0": {
+                "handshake": 2,
+                "connIdle": 120
+            }
+        }
+    }
+}
