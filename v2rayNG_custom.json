@@ -13,7 +13,7 @@
             {
                 "address": "1.1.1.1",
                 "domains": [
-                    "geolocation-!cn"
+                    "geosite:geolocation-!cn"
                 ],
                 "skipFallback": true
             },
