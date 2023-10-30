@@ -4,9 +4,7 @@
     },
     "dns": {
         "hosts": {
-            "geosite:category-ads-all": [
-                "127.0.0.1"
-            ]
+            "geosite:category-ads-all": "127.0.0.1"
         },
         "servers": [
             "1.1.1.1",
@@ -16,16 +14,9 @@
                     "geosite:geolocation-!cn"
                 ],
                 "skipFallback": true
-            },
-            {
-                "address": "223.5.5.5",
-                "domains": [
-                    "geosite:cn",
-                    "geosite:private"
-                ],
-                "skipFallback": true
             }
-        ]
+        ],
+        "queryStrategy": "UseIPv4"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
@@ -40,24 +31,9 @@
             {
                 "type": "field",
                 "domain": [
-                    "geosite:category-ads-all"
-                ],
-                "outboundTag": "block"
-            },
-            {
-                "type": "field",
-                "domain": [
                     "geosite:geolocation-!cn"
                 ],
                 "outboundTag": "proxy"
-            },
-            {
-                "type": "field",
-                "domain": [
-                    "geosite:cn",
-                    "geosite:private"
-                ],
-                "outboundTag": "direct"
             },
             {
                 "type": "field",
@@ -83,7 +59,8 @@
                     "http",
                     "tls",
                     "quic"
-                ]
+                ],
+            "routeOnly": true
             }
         },
         {
@@ -113,11 +90,11 @@
         },
         {
             "protocol": "dns",
-            "settings": {
-                "nonIPQuery": "skip" // 允许非 A/AAAA 的查询，若不写 "settings" 字段，默认值为 "drop"，阻止非 A/AAAA 的查询
+            "settings": { // 若不写 "settings" 字段，使用默认值
+                "nonIPQuery": "drop" // 默认值 "drop"，阻止非 A/AAAA 的查询，"skip"，允许非 A/AAAA 的查询，
             },
-            "proxySettings": { // 当 "nonIPQuery": "skip" 时，若不写 "proxySettings" 字段，将使用本地 DNS 查询
-                "tag": "proxy" // 非 A/AAAA 的查询使用 "tag": "proxy" 出站，目的地址是 "tag": "dns-in" 中 "settings" 字段的内容
+            "proxySettings": { // 当 "nonIPQuery": "skip" 时，若不写 "proxySettings" 字段，使用本地网络出站，若写了使用对应 "tag" 出站
+                "tag": "direct" // 目的地址是 "tag": "dns-in" 中 "settings" 字段的内容
             },
             "tag": "dns-out"
         }
