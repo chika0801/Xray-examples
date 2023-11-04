@@ -1,3 +1,3 @@
-![1](https://github.com/chika0801/Xray-examples/assets/88967758/b6b7159f-f871-44bf-aaa9-1c209a3511fa)
+![1](https://github.com/chika0801/Xray-examples/assets/88967758/853445ac-def6-49ac-8ae0-a4fd800e27d0)
 
-![2](https://github.com/chika0801/Xray-examples/assets/88967758/74b1688a-f7d4-4535-91a1-6cade1893d3e)
+![2](https://github.com/chika0801/Xray-examples/assets/88967758/79b138f8-87fd-492c-8f90-a0019796e8fb)
