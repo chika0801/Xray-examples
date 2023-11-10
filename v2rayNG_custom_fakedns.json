@@ -87,6 +87,9 @@
         },
         {
             "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "AsIs"
+            },
             "tag": "direct"
         },
         {
