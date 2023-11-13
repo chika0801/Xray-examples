@@ -6,7 +6,7 @@
         "servers": [
             "1.1.1.1"
         ],
-        "queryStrategy": "UseIPv4"
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
