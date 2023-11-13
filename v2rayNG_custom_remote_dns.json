@@ -16,7 +16,7 @@
                 "skipFallback": true
             }
         ],
-        "queryStrategy": "UseIPv4"
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
