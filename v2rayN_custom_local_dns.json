@@ -6,7 +6,7 @@
         "servers": [
             "https://223.5.5.5/dns-query"
         ],
-        "queryStrategy": "UseIPv4"
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
