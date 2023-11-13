@@ -16,10 +16,10 @@
                 "skipFallback": true
             }
         ],
-        "queryStrategy": "UseIPv4"
+        "queryStrategy": "UseIP"
     },
     "routing": {
-        "domainStrategy": "AsIs",
+        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "type": "field",
@@ -63,9 +63,12 @@
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
                     "fakedns"
                 ],
-            "routeOnly": false
+                "routeOnly": false
             }
         },
         {
@@ -88,7 +91,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "AsIs"
+                "domainStrategy": "UseIPv4"
             },
             "tag": "direct"
         },
