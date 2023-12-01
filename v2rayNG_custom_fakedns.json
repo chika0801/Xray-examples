@@ -85,7 +85,36 @@
     ],
     "outbounds": [
         {
-            // 粘贴你的客户端配置，需要保留 "tag": "proxy"
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "chika",
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "",
+                    "fingerprint": "chrome"
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": -1,
+                "xudpConcurrency": 16,
+                "xudpProxyUDP443": "reject"
+            },
             "tag": "proxy"
         },
         {
@@ -101,11 +130,11 @@
         },
         {
             "protocol": "dns",
-            "settings": { // 若不写 "settings" 字段，使用默认值
-                "nonIPQuery": "drop" // 默认值 "drop"，阻止非 A/AAAA 的查询，"skip"，允许非 A/AAAA 的查询
+            "settings": {
+                "nonIPQuery": "skip"
             },
-            "proxySettings": { // 当 "nonIPQuery": "skip" 时，若不写 "proxySettings" 字段，使用本地网络出站，若写了使用对应 "tag" 出站
-                "tag": "direct" // 目的地址是 "tag": "dns-in" 中 "settings" 字段的内容
+            "proxySettings": {
+                "tag": "direct"
             },
             "tag": "dns-out"
         }
