@@ -42,6 +42,10 @@
                             "keyFile": "/etc/ssl/private/private.key"
                         }
                     ]
+                },
+                "sockopt": {
+                    "tcpMptcp": true,
+                    "tcpNoDelay": true
                 }
             },
             "sniffing": {
