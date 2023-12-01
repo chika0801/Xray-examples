@@ -20,9 +20,9 @@
 **2：** 使用Vision时不能<br>
 **3：** 自带多路复用
 
-[Mux](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject) [配置示例](v2rayNG_custom_fakedns.json#L103)
+[Mux](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject)
 
-> Mux 配置只需在客户端启用，服务端自动适配
+> Mux 配置只需在[客户端](v2rayNG_custom_fakedns.json#L103)启用，服务端自动适配
 
 ```jsonc
             "mux": {
@@ -33,9 +33,9 @@
             }
 ```
 
-[MPTCP](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084) [配置示例](v2rayNG_custom_fakedns.json#L99)
+[MPTCP](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
 
-> MPTCP 配置需在两端启用
+> MPTCP 配置需在[客户端](v2rayNG_custom_fakedns.json#L99)，[服务端](VLESS-Vision-TLS/config_server_without_fallback.json#L47)同时启用
 
 ```jsonc
                 "sockopt": {
