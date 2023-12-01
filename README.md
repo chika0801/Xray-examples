@@ -26,7 +26,7 @@
 
 ```jsonc
             "mux": {
-                "enabled": true,
+                "enabled": true, // 若打游戏建议 false
                 "concurrency": -1, // 不使用 Mux(TCP)
                 "xudpConcurrency": 16, // 使用 Mux(UDP) ，是 UDP over TCP，若使用 Vision，还会加 padding
                 "xudpProxyUDP443": "reject"
