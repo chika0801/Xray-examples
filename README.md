@@ -20,6 +20,19 @@
 **2：** 使用Vision时不能<br>
 **3：** 自带多路复用
 
+[Mux](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject) 配置示例
+
+> Mux 配置只需要在客户端启用，服务器端自动适配
+
+```jsonc
+            "mux": {
+                "enabled": true,
+                "concurrency": 8, // -1 不使用 Mux(TCP)
+                "xudpConcurrency": 16, // 非 -1 或 0 时，使用 Mux(UDP) ，是 UDP over TCP，主玩游戏建议用 -1
+                "xudpProxyUDP443": "reject"
+            }
+```
+
 :+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
 
 :+1:**REALITY [设计哲学](https://github.com/XTLS/Xray-core/issues/1689#issuecomment-1439447009) [原理拾零](https://github.com/XTLS/Xray-core/issues/1891#issuecomment-1495439413) [配置说明](https://github.com/XTLS/REALITY#readme)**
