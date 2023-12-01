@@ -2,11 +2,11 @@
 
 | | 无需注册域名 | 解决 TLS in TLS | 自带多路复用 | 通过 CDN 访问 |
 | :--- | :---: | :---: | :---: | :---: |
-| **VLESS-XTLS-Vision** | :x: | :heavy_check_mark: | :x: | :x: |
-| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
-| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
-| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
-| **VLESS-gRPC** | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-Vision-TLS** | :x: | :heavy_check_mark: | :x: | :x: |
+| **VLESS-Vision-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
+| **VLESS-gRPC-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| **VLESS-HTTP2-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| **VLESS-gRPC-TLS** | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
 
 :+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
 
