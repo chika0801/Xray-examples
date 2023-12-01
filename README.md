@@ -28,7 +28,7 @@
             "mux": {
                 "enabled": true,
                 "concurrency": 8, // -1 不使用 Mux(TCP)
-                "xudpConcurrency": 16, // 非 -1 或 0 时，使用 Mux(UDP) ，是 UDP over TCP，主玩游戏建议用 -1
+                "xudpConcurrency": 16, // 非 -1 或 0 时，使用 Mux(UDP) ，是 UDP over TCP
                 "xudpProxyUDP443": "reject"
             }
 ```
