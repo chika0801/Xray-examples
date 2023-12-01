@@ -10,8 +10,8 @@
 
 | | 使用 uTLS | 使用 Vision | 服务端 TLS 指纹 | Mux(TCP) | Mux(UDP) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **VLESS TLS** | 可选（推荐使用） | 可选 | Go | :x: **2** | :heavy_check_mark: |
-| **VLESS REALITY** | 必选 | 可选 | Go **1** | :x: **2** | :heavy_check_mark: |
+| **VLESS TLS** | 可选（推荐使用） | 可选（推荐使用） | Go | :x: **2** | :heavy_check_mark: |
+| **VLESS REALITY** | 必选 | 可选（推荐使用） | Go **1** | :x: **2** | :heavy_check_mark: |
 | **VLESS gRPC REALITY** | 必选 | 不能 | Go **1** | :x: **3** | :heavy_check_mark: |
 | **VLESS HTTP2 REALITY** | 必选 | 不能 | Go **1** | :x: **3** | :heavy_check_mark: |
 | **VLESS gRPC TLS** | 可选（推荐使用） | 不能 | Nginx | :x: **3** | :heavy_check_mark: |
