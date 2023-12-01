@@ -94,6 +94,10 @@
                 "tlsSettings": {
                     "serverName": "",
                     "fingerprint": "chrome"
+                },
+                "sockopt": {
+                    "tcpMptcp": true,
+                    "tcpNoDelay": true
                 }
             },
             "mux": {
