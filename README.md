@@ -11,12 +11,12 @@
 | | 使用 uTLS | 使用 Vision | 服务端 TLS 指纹 | Mux(TCP) | Mux(UDP) | MPTCP |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **VLESS-Vision-TLS** | 推荐使用 | 推荐使用 | Go | :x: **2** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-Vision-REALITY** | 必选 | 推荐使用 | Go **1** | :x: **2** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-gRPC-REALITY** | 必选 | 不能 | Go **1** | :x: **3** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-HTTP2-REALITY** | 必选 | 不能 | Go **1** | :x: **3** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-Vision-REALITY** | 必选 | 推荐使用 | **1** | :x: **2** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-REALITY** | 必选 | 不能 | **1** | :x: **3** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-HTTP2-REALITY** | 必选 | 不能 | **1** | :x: **3** | :heavy_check_mark: | :heavy_check_mark: |
 | **VLESS-gRPC-TLS** | 推荐使用 | 不能 | Nginx | :x: **3** | :heavy_check_mark: | :heavy_check_mark: |
 
-**1：** 偷自己时为Nginx<br>
+**1：** 由 `"dest": "",` 目标网站决定，如偷自己时为Nginx<br>
 **2：** 使用Vision时不能<br>
 **3：** 自带多路复用
 
