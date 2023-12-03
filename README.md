@@ -22,8 +22,6 @@
 
 [Mux](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject)
 
-> Mux 配置只需在[客户端](v2rayNG_custom_fakedns.json#L103)启用，服务端自动适配
-
 ```jsonc
             "mux": {
                 "enabled": true, // 若打游戏建议 false
@@ -33,9 +31,9 @@
             }
 ```
 
-[MPTCP](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
+> Mux 配置只需在[客户端](v2rayNG_custom_fakedns.json#L103)启用，服务端自动适配
 
-> MPTCP 配置需在[客户端](v2rayNG_custom_fakedns.json#L99)，[服务端](VLESS-Vision-TLS/config_server_without_fallback.json#L47)同时启用
+[MPTCP](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
 
 ```jsonc
                 "sockopt": {
@@ -43,6 +41,9 @@
                     "tcpNoDelay": true
                 }
 ```
+
+> MPTCP 配置需在[客户端](v2rayNG_custom_fakedns.json#L99)，[服务端](VLESS-Vision-TLS/config_server_without_fallback.json#L47)同时启用<br>
+> 需要 Xray-core 版本 1.8.6 或更高。
 
 :+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
 
