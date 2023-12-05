@@ -20,7 +20,7 @@
 **2：** 使用Vision时不能<br>
 **3：** 自带多路复用
 
-[Mux](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject)
+[**Mux**](https://xtls.github.io/Xray-docs-next/config/outbound.html#muxobject)
 
 ```jsonc
             "mux": {
@@ -33,7 +33,7 @@
 
 > Mux 配置只需在[客户端](v2rayNG_custom_fakedns.json#L103)启用，服务端自动适配
 
-[MPTCP](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
+[**MPTCP**](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
 
 ```jsonc
                 "sockopt": {
