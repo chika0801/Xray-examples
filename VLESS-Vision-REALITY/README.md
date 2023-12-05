@@ -139,7 +139,7 @@
 | 数据包编码 | Xudp (Xray-core) |
 | 多路复用 | 不勾 |
 | TLS | 勾上 |
-| TLS SNI | www.lovelive-anime.jp |
+| TLS SNI | `www.lovelive-anime.jp` |
 | TLS ALPN | 留空 |
 | 允许不安全连接 | 不勾 |
 | 最低 TLS 版本 | 默认 |
