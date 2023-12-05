@@ -121,3 +121,33 @@
 | 本地端口 | 1234 |
 
 </details>
+
+### HomeProxy 配置示例
+
+<details><summary>点击查看</summary><br>
+
+| 名称 | 值 |
+| :--- | :--- |
+| 类型 | VLESS |
+| 地址 | 服务端的 IP |
+| 端口 | 443 |
+| UUID | chika |
+| 流控 | xtls-rprx-vision |
+| 传输层 | 无 |
+| 数据包编码 | Xudp (Xray-core) |
+| 多路复用 | 不勾 |
+| TLS | 勾上 |
+| TLS SNI | chika.example.com |
+| TLS ALPN | 留空 |
+| 允许不安全连接 | 不勾 |
+| 最低 TLS 版本 | 默认 |
+| 最大 TLS 版本 | 默认 |
+| 密码套件 | --请选择-- |
+| 追加自签名证书 | 不勾 |
+| uTLS 指纹 | Chrome |
+| REALITY | 不勾 |
+| TCP 快速打开 | 不勾 |
+| 多路径 TCP（MPTCP） | 不勾 |
+| UDP 分片 | 不勾 |
+
+</details>
