@@ -14,7 +14,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 - 复制输出的 `private_key/secretKey` 值，粘贴到下面配置中 `secretKey` 后的 `""` 中
 - 复制输出的 `reserved` 值，粘贴到下面配置中 `reserved` 后的 `[]` 中
 
-### "outbounds"**
+### "outbounds"
 ```jsonc
         {
             "protocol": "wireguard",
@@ -44,7 +44,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 
 编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问[chat.openai.com/cdn-cgi/trace](https://chat.openai.com/cdn-cgi/trace)查看是否为Cloudflare的IP。
 
-### "routing"**
+### "routing"
 ```jsonc
             {
                 "type": "field",
@@ -55,7 +55,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
             }
 ```
 
-### "inbounds"**
+### "inbounds"
 ```jsonc
             "sniffing": {
                 "enabled": true,
@@ -67,7 +67,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
             }
 ```
 
-### 服务端配置示例**
+### 服务端配置示例
 
 ```jsonc
 {
