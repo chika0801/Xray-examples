@@ -146,7 +146,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domainStrategy": "UseIPv4"
             },
             "proxySettings": {
-                "tag": "wireguard"
+                "tag": "warp"
             },
             "tag": "warp-IPv4"
         },
@@ -156,7 +156,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domainStrategy": "UseIPv6"
             },
             "proxySettings": {
-                "tag": "wireguard"
+                "tag": "warp"
             },
             "tag": "warp-IPv6"
         },
