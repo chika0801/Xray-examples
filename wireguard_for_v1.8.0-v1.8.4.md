@@ -28,7 +28,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domainStrategy": "UseIPv4"
             },
             "proxySettings": {
-                "tag": "wireguard"
+                "tag": "warp"
             },
             "tag": "warp-IPv4"
         },
@@ -38,7 +38,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domainStrategy": "UseIPv6"
             },
             "proxySettings": {
-                "tag": "wireguard"
+                "tag": "warp"
             },
             "tag": "warp-IPv6"
         },
@@ -63,7 +63,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280
             },
-            "tag": "wireguard"
+            "tag": "warp"
         }
 ```
 
@@ -114,7 +114,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "ip": [
                     "geoip:cn"
                 ],
-                "outboundTag": "wireguard"
+                "outboundTag": "warp"
             }
         ]
     },
@@ -181,7 +181,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280
             },
-            "tag": "wireguard"
+            "tag": "warp"
         }
     ]
 }
