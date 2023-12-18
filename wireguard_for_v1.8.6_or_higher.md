@@ -44,7 +44,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "mtu": 1280,
                 "domainStrategy": "ForceIPv6v4" // 若需使用Cloudflare的IPv4，改为 "ForceIPv4"
             },
-            "tag": "wireguard"
+            "tag": "warp"
         }
 ```
 
@@ -68,7 +68,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domain": [
                     "geosite:openai"
                 ],
-                "outboundTag": "wireguard"
+                "outboundTag": "warp"
             }
 ```
 
@@ -99,14 +99,14 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "domain": [
                     "geosite:openai"
                 ],
-                "outboundTag": "wireguard"
+                "outboundTag": "warp"
             },
             {
                 "type": "field",
                 "ip": [
                     "geoip:cn"
                 ],
-                "outboundTag": "wireguard"
+                "outboundTag": "warp"
             }
         ]
     },
@@ -154,7 +154,7 @@ bash -c "$(curl -L warp-reg.vercel.app)"
                 "mtu": 1280,
                 "domainStrategy": "ForceIPv6v4" // 若需使用Cloudflare的IPv4，改为 "ForceIPv4"
             },
-            "tag": "wireguard"
+            "tag": "warp"
         }
     ]
 }
