@@ -42,6 +42,17 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
         }
 ```
 
+| domainStrategy | [test-ipv6.com](https://test-ipv6.com/) | [bgp.he.net](https://bgp.he.net/) | [chat.openai.com](https://chat.openai.com/cdn-cgi/trace)
+| :--- | :---: | :---: | :---: |
+| ForceIPv6v4 | IPv6v4地址 | IPv6地址 | IPv6地址 |
+| ForceIPv6 | 网站打不开 | IPv6地址 | IPv6地址 |
+| ForceIPv4v6 | IPv6v4地址 **1** | IPv4地址 | IPv4地址 |
+| ForceIPv4 | IPv4地址 | IPv4地址 | IPv4地址 |
+| ForceIP | IPv6v4地址 **2** | IPv6地址 | IPv6地址 |
+
+**1：** 提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`<br>
+**2：** 有机率提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`
+
 编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问[chat.openai.com/cdn-cgi/trace](https://chat.openai.com/cdn-cgi/trace)查看是否为Cloudflare的IP。
 
 ### "routing"
