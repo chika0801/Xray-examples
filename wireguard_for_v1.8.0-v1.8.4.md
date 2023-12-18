@@ -165,7 +165,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                             "0.0.0.0/0",
                             "::/0"
                         ],
-                        "endpoint": "162.159.192.1:2408"
+                        "endpoint": "162.159.192.1:2408" // 或填写 engage.cloudflareclient.com:2408
                     }
                 ],
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
