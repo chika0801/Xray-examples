@@ -11,7 +11,7 @@
 
 ---
 
-[使用 wireguard 配置示例](https://github.com/chika0801/Xray-examples/blob/main/wireguard.md)
+[使用 wireguard 配置示例](./wireguard_for_v1.8.6_or_higher.md)
 
 ### :memo:
 
