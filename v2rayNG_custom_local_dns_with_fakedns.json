@@ -4,7 +4,11 @@
     },
     "dns": {
         "hosts": {
-            "geosite:category-ads-all": "127.0.0.1"
+            "geosite:category-ads-all": "127.0.0.1",
+            "domain:.mcdn.bilivideo.cn": "127.0.0.1",
+            "domain:.szbdyd.com": "127.0.0.1",
+            "regexp:cn-[a-zA-Z0-9-]+\\.bilivideo\\.com": "127.0.0.1",
+            "regexp:[a-zA-Z0-9-]+-pcdn-[a-zA-Z0-9-]+\\.biliapi\\.net": "127.0.0.1"
         },
         "servers": [
             "https+local://223.5.5.5/dns-query",
@@ -25,6 +29,17 @@
                     "dns-in"
                 ],
                 "outboundTag": "dns-out"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:category-ads-all",
+                    "domain:.mcdn.bilivideo.cn",
+                    "domain:.szbdyd.com",
+                    "regexp:cn-[a-zA-Z0-9-]+\\.bilivideo\\.com",
+                    "regexp:[a-zA-Z0-9-]+-pcdn-[a-zA-Z0-9-]+\\.biliapi\\.net"
+                ],
+                "outboundTag": "block"
             },
             {
                 "type": "field",
@@ -96,6 +111,7 @@
                     "fingerprint": "chrome"
                 },
                 "sockopt": {
+                    "tcpcongestion": "bbr",
                     "tcpMptcp": true,
                     "tcpNoDelay": true
                 }
@@ -110,6 +126,11 @@
         },
         {
             "protocol": "freedom",
+            "streamSettings": {
+                "sockopt": {
+                    "tcpFastOpen": true
+                }
+            },
             "tag": "direct"
         },
         {
@@ -119,7 +140,7 @@
         {
             "protocol": "dns",
             "settings": {
-                "nonIPQuery": "skip"
+                "nonIPQuery": "drop"
             },
             "proxySettings": {
                 "tag": "direct"
