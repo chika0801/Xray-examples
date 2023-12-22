@@ -84,12 +84,28 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
             }
 ```
 
+### "dns"
+```jsonc
+    "dns": {
+        "servers": [
+            "https+local://1.1.1.1/dns-query"
+        ],
+        "queryStrategy": "UseIP" // 若不写此参数，默认值 UseIP，即同时查询 A 和 AAAA 记录，可选值 UseIPv4 和 UseIPv6，其它记录类型由系统 DNS 查询
+    }
+```
+
 ### 服务端配置示例
 
 ```jsonc
 {
     "log": {
         "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "https+local://1.1.1.1/dns-query"
+        ],
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
@@ -152,10 +168,13 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                 ],
                 "reserved":[0, 0, 0],
                 "mtu": 1280,
-                "domainStrategy": "ForceIPv6v4"
+                "domainStrategy": "ForceIPv6v4" // 1
             },
             "tag": "warp"
         }
     ]
 }
 ```
+
+**1：** 若不写此参数，或留空，默认值 "ForceIP"。<br>
+当接收到的请求是域名，使用 Xray-core 内置 DNS 服务器查询获取 IP（若没写 `"dns"` 部分配置，使用系统 DNS），将此 IP 通过 wireguard 发出连接。
