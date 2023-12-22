@@ -142,6 +142,9 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
     "outbounds": [
         {
             "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIPv6v4"
+            },
             "tag": "direct"
         },
         {
