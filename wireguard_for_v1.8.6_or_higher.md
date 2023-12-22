@@ -28,7 +28,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                 "secretKey": "", // 粘贴你的 "private_key" 值
                 "address": [
                     "172.16.0.2/32",
-                    "2606:4700::/128" // 粘贴你获得的 warp IPv6 地址，结尾加 /128
+                    "2606:4700::/128" // 粘贴你的 warp IPv6 地址，结尾加 /128
                 ],
                 "peers": [
                     {
@@ -42,7 +42,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                 ],
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280,
-                "domainStrategy": "ForceIPv6v4" // 若需使用Cloudflare的IPv4，改为 "ForceIPv4"
+                "domainStrategy": "ForceIPv6v4" // 若需使用 cloudflare 的 IPv4，改为 "ForceIPv4"
             },
             "tag": "warp"
         }
