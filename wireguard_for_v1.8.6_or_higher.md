@@ -37,7 +37,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                             "0.0.0.0/0",
                             "::/0"
                         ],
-                        "endpoint": "162.159.192.1:2408" // 或填写 engage.cloudflareclient.com:2408
+                        "endpoint": "162.159.192.1:2408" // IPv6 地址 [2606:4700:d0::a29f:c001]:2408，或填写域名 engage.cloudflareclient.com:2408
                     }
                 ],
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
@@ -135,10 +135,10 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
         {
             "protocol": "wireguard",
             "settings": {
-                "secretKey": "", // 粘贴你的 "private_key" 值
+                "secretKey": "",
                 "address": [
                     "172.16.0.2/32",
-                    "2606:4700::/128" // 粘贴你获得的 warp IPv6 地址，结尾加 /128
+                    "2606:4700::/128"
                 ],
                 "peers": [
                     {
@@ -147,12 +147,12 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                             "0.0.0.0/0",
                             "::/0"
                         ],
-                        "endpoint": "162.159.192.1:2408" // 或填写 engage.cloudflareclient.com:2408
+                        "endpoint": "162.159.192.1:2408"
                     }
                 ],
-                "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
+                "reserved":[0, 0, 0],
                 "mtu": 1280,
-                "domainStrategy": "ForceIPv6v4" // 若需使用Cloudflare的IPv4，改为 "ForceIPv4"
+                "domainStrategy": "ForceIPv6v4"
             },
             "tag": "warp"
         }
