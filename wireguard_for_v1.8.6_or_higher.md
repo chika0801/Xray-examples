@@ -175,9 +175,9 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 | :--- | :---: | :---: | :---: |
 | ForceIPv6v4 | IPv6v4地址 | IPv6地址 | IPv6地址 |
 | ForceIPv6 | 网站打不开 | IPv6地址 | IPv6地址 |
-| ForceIPv4v6 | IPv6v4地址 **1** | IPv4地址 | IPv4地址 |
+| ForceIPv4v6 | IPv6v4地址 **2** | IPv4地址 | IPv4地址 |
 | ForceIPv4 | IPv4地址 | IPv4地址 | IPv4地址 |
-| ForceIP | IPv6v4地址 **2** | IPv6地址 | IPv6地址 |
+| ForceIP | IPv6v4地址 **3** | IPv6地址 | IPv6地址 |
 
-**1：** 提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`<br>
-**2：** 有机率提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`
+**2：** 提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`<br>
+**3：** 有机率提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`
