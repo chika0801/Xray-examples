@@ -23,7 +23,7 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "chika", // 长度为 1-30 字节的任意字符串，或执行 xray uuid 生成
+                        "id": "chika",
                         "flow": "xtls-rprx-vision"
                     }
                 ],
@@ -61,6 +61,11 @@
     "outbounds": [
         {
             "protocol": "freedom",
+            "streamSettings": {
+                "sockopt": {
+                    "tcpFastOpen": true
+                }
+            },
             "tag": "direct"
         },
         {
