@@ -92,12 +92,28 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
             }
 ```
 
+### "dns"
+```jsonc
+    "dns": {
+        "servers": [
+            "https+local://1.1.1.1/dns-query"
+        ],
+        "queryStrategy": "UseIP" // 若不写此参数，默认值 UseIP，即同时查询 A 和 AAAA 记录，可选值 UseIPv4 和 UseIPv6，其它记录类型由系统 DNS 查询
+    }
+```
+
 ### 服务端配置示例
 
 ```jsonc
 {
     "log": {
         "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "https+local://1.1.1.1/dns-query"
+        ],
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
