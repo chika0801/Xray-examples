@@ -132,7 +132,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "ForceIPv6v4"
+                "domainStrategy": "UseIP"
             },
             "tag": "direct"
         },
