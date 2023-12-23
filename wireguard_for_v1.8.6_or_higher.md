@@ -77,7 +77,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 ```jsonc
     "dns": {
         "servers": [
-            "https+local://1.1.1.1/dns-query"
+            "https://1.1.1.1/dns-query"
         ],
         "queryStrategy": "UseIP" // 若不写此参数，默认值 UseIP，即同时查询 A 和 AAAA 记录，可选值 UseIPv4 和 UseIPv6，其它记录类型由系统 DNS 查询
     }
@@ -92,7 +92,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
     },
     "dns": {
         "servers": [
-            "https+local://1.1.1.1/dns-query"
+            "https://1.1.1.1/dns-query"
         ],
         "queryStrategy": "UseIP"
     },
@@ -181,3 +181,95 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 
 **2：** 提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`<br>
 **3：** 有机率提示`你已经有 IPv6 地址了，但你的浏览器不太愿意用，这一点比较令人担心。`
+
+### 另一种方式
+
+```jsonc
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "https://1.1.1.1/dns-query"
+            {
+                "address": "https://1.1.1.1/dns-query",
+                "domains": [
+                    "geosite:openai"
+                ],
+                "skipFallback": true,
+                "queryStrategy": "UseIPv6"
+            }
+        ],
+        "queryStrategy": "UseIP"
+    },
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:openai"
+                ],
+                "outboundTag": "warp"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:cn"
+                ],
+                "outboundTag": "warp"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            // 粘贴你的服务端配置
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIPv6v4"
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        },
+        {
+            "protocol": "wireguard",
+            "settings": {
+                "secretKey": "",
+                "address": [
+                    "172.16.0.2/32",
+                    "2606:4700::/128"
+                ],
+                "peers": [
+                    {
+                        "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+                        "allowedIPs": [
+                            "0.0.0.0/0",
+                            "::/0"
+                        ],
+                        "endpoint": "162.159.192.1:2408"
+                    }
+                ],
+                "reserved":[0, 0, 0],
+                "mtu": 1280
+            },
+            "tag": "warp"
+        }
+    ]
+}
+```
