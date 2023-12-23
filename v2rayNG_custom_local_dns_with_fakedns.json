@@ -32,6 +32,18 @@
             },
             {
                 "type": "field",
+                "port": 853,
+                "network": "tcp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "port": 443,
+                "network": "udp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
                 "domain": [
                     "geosite:category-ads-all",
                     "domain:.mcdn.bilivideo.cn",
