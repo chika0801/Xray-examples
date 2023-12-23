@@ -31,7 +31,7 @@
             }
 ```
 
-> Mux 配置只需在[客户端](v2rayNG_custom_local_dns_with_fakedns.json#L119-L124)启用，服务端自动适配
+> Mux 配置只需在[客户端](v2rayNG_custom_local_dns_with_fakedns.json#L131-L136)启用，服务端自动适配
 
 [**MPTCP**](https://github.com/XTLS/Xray-core/pull/2520#issuecomment-1711212084)
 
@@ -42,7 +42,7 @@
                 }
 ```
 
-> MPTCP 配置需在[客户端](v2rayNG_custom_local_dns_with_fakedns.json#L115-L116)，[服务端](VLESS-Vision-TLS/config_server_without_fallback.json#L47-L48)同时启用<br>
+> MPTCP 配置需在[客户端](v2rayNG_custom_local_dns_with_fakedns.json#L127-L128)，[服务端](VLESS-Vision-TLS/config_server_without_fallback.json#L47-L48)同时启用<br>
 > 需要 Xray-core 版本 1.8.6 或更高。
 
 :+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
