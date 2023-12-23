@@ -32,7 +32,7 @@
                     "geoip:cn"
                 ],
                 "outboundTag": "warp"
-            }
+            },
             {
                 "type": "field",
                 "ip": [
