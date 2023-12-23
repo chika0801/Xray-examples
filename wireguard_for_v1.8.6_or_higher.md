@@ -191,7 +191,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
     },
     "dns": {
         "servers": [
-            "https://1.1.1.1/dns-query"
+            "https://1.1.1.1/dns-query",
             {
                 "address": "https://1.1.1.1/dns-query",
                 "domains": [
