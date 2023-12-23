@@ -89,7 +89,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "ForceIPv6v4"
+                "domainStrategy": "UseIP"
             },
             "streamSettings": {
                 "sockopt": {
