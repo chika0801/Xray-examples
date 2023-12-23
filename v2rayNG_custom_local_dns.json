@@ -30,6 +30,18 @@
             },
             {
                 "type": "field",
+                "port": 853,
+                "network": "tcp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "port": 443,
+                "network": "udp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
                 "ip": [
                     "223.5.5.5"
                 ],
@@ -101,7 +113,7 @@
         {
             "protocol": "dns",
             "settings": { // 若不写 "settings" 字段，使用默认值
-                "nonIPQuery": "drop" // 默认值 "drop"，阻止非 A/AAAA 的查询，"skip"，允许非 A/AAAA 的查询
+                "nonIPQuery": "drop" // 默认值 "drop"，阻止非 A 和 AAAA 的查询，"skip"，允许非 A 和 AAAA 的查询
             },
             "proxySettings": { // 当 "nonIPQuery": "skip" 时，若不写 "proxySettings" 字段，使用本地网络出站，若写了使用对应 "tag" 出站
                 "tag": "direct" // 目的地址是 "tag": "dns-in" 中 "settings" 字段的内容
