@@ -175,7 +175,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 **1：** 若不写此参数，或留空，默认值 "ForceIP"。<br>
 当目标地址为域名时，使用 Xray-core 内置 DNS 服务器查询获取 IP（若没写 `"dns"` 部分配置，使用系统 DNS），将此 IP 通过 wireguard 发出连接。
 
-| domainStrategy | [test-ipv6.com](https://test-ipv6.com/) | [bgp.he.net](https://bgp.he.net/) | [chat.openai.com](https://chat.openai.com/cdn-cgi/trace)
+| domainStrategy | [test-ipv6.com](https://test-ipv6.com/) | [bgp.he.net](https://bgp.he.net/) | [chat.openai.com](https://chat.openai.com/cdn-cgi/trace) |
 | :--- | :---: | :---: | :---: |
 | ForceIPv6v4 | IPv6v4地址 | IPv6地址 | IPv6地址 |
 | ForceIPv6 | 网站打不开 | IPv6地址 | IPv6地址 |
