@@ -189,7 +189,7 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
                 "secretKey": "",
                 "address": [
                     "172.16.0.2/32",
-                    "/128"
+                    "2606:4700::/128"
                 ],
                 "peers": [
                     {
