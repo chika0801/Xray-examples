@@ -23,6 +23,7 @@
             {
                 "type": "field",
                 "domain": [
+                    "geosite:netflix",
                     "geosite:openai"
                 ],
                 "outboundTag": "warp"
