@@ -6,8 +6,9 @@
         "servers": [
             "https://1.1.1.1/dns-query",
             {
-                "address": "https://1.1.1.1/dns-query",
+                "address": "https://8.8.8.8/dns-query",
                 "domains": [
+                    "geosite:netflix",
                     "geosite:openai"
                 ],
                 "skipFallback": true,
@@ -89,7 +90,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIP"
+                "domainStrategy": "ForceIPv4"
             },
             "streamSettings": {
                 "sockopt": {
@@ -125,5 +126,13 @@
             },
             "tag": "warp"
         }
-    ]
+    ],
+    "policy": {
+        "levels": {
+            "0": {
+                "handshake": 2,
+                "connIdle": 120
+            }
+        }
+    }
 }
