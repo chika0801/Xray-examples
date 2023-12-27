@@ -4,20 +4,13 @@
     },
     "dns": {
         "servers": [
-            "https://223.5.5.5/dns-query"
+            "https+local://223.5.5.5/dns-query"
         ],
         "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
         "rules": [
-            {
-                "type": "field",
-                "ip": [
-                    "223.5.5.5"
-                ],
-                "outboundTag": "direct"
-            },
             {
                 "type": "field",
                 "domain": [
@@ -62,7 +55,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIPv4"
+                "domainStrategy": "UseIP"
             },
             "tag": "direct"
         },
