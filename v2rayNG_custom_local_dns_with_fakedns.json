@@ -17,33 +17,31 @@
                 "domains": [
                     "geosite:geolocation-!cn"
                 ],
-                "skipFallback": true
+                "skipFallback": true,
+                "queryStrategy": "UseIPv4"
             }
-        ]
+        ],
+        "queryStrategy": "UseIP"
     },
     "routing": {
         "rules": [
             {
-                "type": "field",
                 "inboundTag": [
                     "dns-in"
                 ],
                 "outboundTag": "dns-out"
             },
             {
-                "type": "field",
                 "port": 853,
                 "network": "tcp",
                 "outboundTag": "block"
             },
             {
-                "type": "field",
                 "port": 443,
                 "network": "udp",
                 "outboundTag": "block"
             },
             {
-                "type": "field",
                 "domain": [
                     "geosite:category-ads-all",
                     "domain:.mcdn.bilivideo.cn",
@@ -54,14 +52,12 @@
                 "outboundTag": "block"
             },
             {
-                "type": "field",
                 "domain": [
                     "geosite:geolocation-!cn"
                 ],
                 "outboundTag": "proxy"
             },
             {
-                "type": "field",
                 "ip": [
                     "geoip:cn",
                     "geoip:private"
@@ -81,6 +77,9 @@
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
+                    "http",
+                    "tls",
+                    "quic",
                     "fakedns"
                 ]
             }
@@ -138,6 +137,9 @@
         },
         {
             "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIPv6v4"
+            },
             "streamSettings": {
                 "sockopt": {
                     "tcpFastOpen": true
