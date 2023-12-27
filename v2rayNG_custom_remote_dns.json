@@ -13,7 +13,8 @@
                 "domains": [
                     "geosite:geolocation-!cn"
                 ],
-                "skipFallback": true
+                "skipFallback": true,
+                "queryStrategy": "UseIPv4"
             }
         ],
         "queryStrategy": "UseIP"
@@ -42,10 +43,10 @@
             },
             {
                 "type": "field",
-                "ip": [
-                    "1.1.1.1"
+                "domain": [
+                    "geosite:category-ads-all"
                 ],
-                "outboundTag": "proxy"
+                "outboundTag": "block"
             },
             {
                 "type": "field",
@@ -102,7 +103,12 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIPv4"
+                "domainStrategy": "UseIP"
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpFastOpen": true
+                }
             },
             "tag": "direct"
         },
