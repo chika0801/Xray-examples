@@ -13,13 +13,6 @@
         "rules": [
             {
                 "type": "field",
-                "ip": [
-                    "1.1.1.1"
-                ],
-                "outboundTag": "proxy"
-            },
-            {
-                "type": "field",
                 "domain": [
                     "geosite:category-ads-all"
                 ],
@@ -62,7 +55,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIPv4"
+                "domainStrategy": "UseIP"
             },
             "tag": "direct"
         },
