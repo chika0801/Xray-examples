@@ -78,7 +78,7 @@
 
 </details>
 
-### PassWall - V4.61 及以上版本 配置示例 (Xray-core)
+### PassWall - V4.61 及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
 
