@@ -123,7 +123,6 @@
                     "fingerprint": "chrome"
                 },
                 "sockopt": {
-                    "tcpcongestion": "bbr",
                     "tcpMptcp": true,
                     "tcpNoDelay": true
                 }
@@ -140,11 +139,6 @@
             "protocol": "freedom",
             "settings": {
                 "domainStrategy": "ForceIPv6v4"
-            },
-            "streamSettings": {
-                "sockopt": {
-                    "tcpFastOpen": true
-                }
             },
             "tag": "direct"
         },
