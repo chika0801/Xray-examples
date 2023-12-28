@@ -24,7 +24,7 @@
         "queryStrategy": "UseIP"
     },
     "routing": {
-        "domainStrategy": "IPOnDemand",
+        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "inboundTag": [
