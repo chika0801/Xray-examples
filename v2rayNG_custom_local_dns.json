@@ -105,11 +105,6 @@
             "settings": {
                 "domainStrategy": "UseIP"
             },
-            "streamSettings": {
-                "sockopt": {
-                    "tcpFastOpen": true
-                }
-            },
             "tag": "direct"
         },
         {
