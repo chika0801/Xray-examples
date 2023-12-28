@@ -1,6 +1,6 @@
 ### 注意：
 
-:exclamation:gRPC/H2 建议在有优化回程路由的VPS上使用。如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等。并且你到VPS之间的延迟越低越好。建议参考 NaïveProxy 的 [Performance Tuning](https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning) 进行优化。除此以外，可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/h2.html#httpobject)，使用[健康检查](https://github.com/chika0801/Xray-examples/blob/main/VLESS-H2-uTLS-REALITY/config_client.json#L65)参数。
+:exclamation:gRPC/H2 建议在有优化回程路由的VPS上使用。如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等。并且你到VPS之间的延迟越低越好。建议参考 NaïveProxy 的 [Performance Tuning](https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning) 进行优化。除此以外，可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/h2.html#httpobject)，使用[健康检查](https://github.com/chika0801/Xray-examples/blob/main/VLESS-HTTP2-REALITY/config_client.json#L56-L57)参数。
 
 ### v2rayN - V6.19 及以上版本 配置示例
 
