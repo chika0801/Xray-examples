@@ -78,8 +78,8 @@
             },
             "streamSettings": {
                 "network": "h2",
-                "httpSettings": { // 若不写 "httpSettings" 或 "host": [] 值留空时，会使用默认值 "www.example.com"，需要两端 "host" 值一致才能连接成功，"host": [""] 不是值留空
-                    "host": []
+                "httpSettings": {
+                    "host": [] // 若不写此字段或值留空时，将使用默认值 "www.example.com"，若设置此字段，需要两端值一致才能连接成功，"host": [""] 不是值留空
                 },
                 "sockopt": {
                     "acceptProxyProtocol": true
