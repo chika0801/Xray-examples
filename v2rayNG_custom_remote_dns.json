@@ -117,7 +117,7 @@
                 "nonIPQuery": "drop" // 若不写此字段，将使用默认值 "drop"，阻止非 A 和 AAAA 记录查询，若设置为 "skip"，则允许非 A 和 AAAA 记录查询
             },
             "proxySettings": {
-                "tag": "direct" // 当 "nonIPQuery" 设置为 "skip" 时，若不写此字段，将使用本地网络出站；若设置此字段，将使用对应 "tag" 出站，目的地址对应 "dns-in" 中的 "settings" 字段的内容
+                "tag": "proxy" // 当 "nonIPQuery" 设置为 "skip" 时，若不写此字段，将使用本地网络出站；若设置此字段，将使用对应 "tag" 出站，目的地址对应 "dns-in" 中的 "settings" 字段的内容
             },
             "tag": "dns-out"
         }
