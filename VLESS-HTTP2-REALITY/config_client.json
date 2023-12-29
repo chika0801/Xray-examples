@@ -51,8 +51,8 @@
                     "publicKey": "Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw", // 服务端执行 xray x25519 生成，私钥对应的公钥，填 "Public key" 的值
                     "shortId": "6ba85179e30d4fc2" // 与服务端一致
                 },
-                "httpSettings": { // 若不写 "httpSettings" 或 "host": [] 值留空时，会使用默认值 "www.example.com"，需要两端 "host" 值一致才能连接成功，"host": [""] 不是值留空
-                    "host": [],
+                "httpSettings": {
+                    "host": [], // 与服务端一致
                     "read_idle_timeout": 60,
                     "health_check_timeout": 20
                 }
