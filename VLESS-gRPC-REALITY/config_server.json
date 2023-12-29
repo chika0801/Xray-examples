@@ -48,7 +48,7 @@
                     ]
                 },
                 "grpcSettings": {
-                    "serviceName": "lovelive" // gRPC 服务名称，需要两端值一致才能连接成功
+                    "serviceName": "lovelive" // gRPC 服务名称
                 }
             },
             "sniffing": {
