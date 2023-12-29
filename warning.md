@@ -11,8 +11,6 @@
 
 ---
 
-[使用 wireguard 配置示例](./wireguard_for_v1.8.6_or_higher.md)
-
 ### :memo:
 
 相对于 XTLS Vision 的使用基数，目前几乎没有收到 **配置正确** 的 Vision 被封端口的报告，**配置正确** 指的是：
