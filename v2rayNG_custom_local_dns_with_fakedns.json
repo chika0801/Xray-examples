@@ -44,26 +44,7 @@
             },
             {
                 "domain": [
-                    "domain:httpdns.alicdn.com",
-                    "domain:httpdns-api.aliyuncs.com",
-                    "domain:httpdns-sc.aliyuncs.com",
-                    "domain:httpsdns.baidu.com",
-                    "domain:httpdns.baidu.com",
-                    "domain:httpdns.baidubce.com",
-                    "domain:httpdns.bilivideo.com",
-                    "domain:httpdns.c.cdnhwc2.com",
-                    "domain:dns.jd.com",
-                    "domain:kuaishou.httpdns.pro",
-                    "domain:httpdns.meituan.com",
-                    "domain:httpdns.n.netease.com",
-                    "domain:httpdns.music.163.com",
-                    "domain:music.httpdns.c.163.com",
-                    "domain:lofter.httpdns.c.163.com",
-                    "domain:httpdns.push.oppomobile.com",
-                    "domain:httpdns.volcengineapi.com",
-                    "domain:dns.weibo.cn",
-                    "domain:dns.weixin.qq.com",
-                    "domain:dns.weixin.qq.com.cn"
+                    "geosite:category-httpdns"
                 ],
                 "outboundTag": "block"
             },
