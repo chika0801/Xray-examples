@@ -33,11 +33,6 @@
                 "outboundTag": "dns-out"
             },
             {
-                "port": 853,
-                "network": "tcp",
-                "outboundTag": "block"
-            },
-            {
                 "port": 443,
                 "network": "udp",
                 "outboundTag": "block"
