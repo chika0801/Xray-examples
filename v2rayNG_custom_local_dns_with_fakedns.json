@@ -4,6 +4,7 @@
     },
     "dns": {
         "hosts": {
+            "geosite:category-httpdns": "127.0.0.1",
             "geosite:category-ads-all": "127.0.0.1",
             "domain:mcdn.bilivideo.cn": "127.0.0.1",
             "domain:szbdyd.com": "127.0.0.1",
@@ -24,7 +25,7 @@
         "queryStrategy": "UseIP"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "AsIs",
         "rules": [
             {
                 "inboundTag": [
@@ -33,15 +34,21 @@
                 "outboundTag": "dns-out"
             },
             {
-                "port": 443,
-                "network": "udp",
+                "domain": [
+                    "geosite:category-httpdns",
+                    "geosite:category-ads-all",
+                    "domain:mcdn.bilivideo.cn",
+                    "domain:szbdyd.com",
+                    "regexp:cn-[a-zA-Z0-9-]+\\.bilivideo\\.com",
+                    "regexp:[a-zA-Z0-9-]+-pcdn-[a-zA-Z0-9-]+\\.biliapi\\.net"
+                ],
                 "outboundTag": "block"
             },
             {
                 "domain": [
-                    "geosite:category-httpdns"
+                    "geosite:geolocation-!cn"
                 ],
-                "outboundTag": "block"
+                "outboundTag": "proxy"
             },
             {
                 "ip": [
@@ -73,22 +80,6 @@
                 "outboundTag": "block"
             },
             {
-                "domain": [
-                    "geosite:category-ads-all",
-                    "domain:mcdn.bilivideo.cn",
-                    "domain:szbdyd.com",
-                    "regexp:cn-[a-zA-Z0-9-]+\\.bilivideo\\.com",
-                    "regexp:[a-zA-Z0-9-]+-pcdn-[a-zA-Z0-9-]+\\.biliapi\\.net"
-                ],
-                "outboundTag": "block"
-            },
-            {
-                "domain": [
-                    "geosite:geolocation-!cn"
-                ],
-                "outboundTag": "proxy"
-            },
-            {
                 "ip": [
                     "geoip:cn",
                     "geoip:private"
@@ -112,7 +103,8 @@
                     "tls",
                     "quic",
                     "fakedns"
-                ]
+                ],
+                "routeOnly": true
             }
         },
         {
