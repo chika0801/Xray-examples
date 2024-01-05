@@ -7,20 +7,12 @@
             "geosite:category-ads-all": "127.0.0.1"
         },
         "servers": [
-            "1.1.1.1",
-            {
-                "address": "1.1.1.1",
-                "domains": [
-                    "geosite:geolocation-!cn"
-                ],
-                "skipFallback": true,
-                "queryStrategy": "UseIPv4"
-            }
+            "https://1.1.1.1/dns-query"
         ],
         "queryStrategy": "UseIP"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "AsIs",
         "rules": [
             {
                 "type": "field",
@@ -68,7 +60,7 @@
                     "tls",
                     "quic"
                 ],
-                "routeOnly": false
+                "routeOnly": true
             }
         },
         {
