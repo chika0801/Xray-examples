@@ -4,13 +4,20 @@
     },
     "dns": {
         "servers": [
-            "1.1.1.1"
+            "https://1.1.1.1/dns-query"
         ],
         "queryStrategy": "UseIP"
     },
     "routing": {
         "domainStrategy": "IPIfNonMatch",
         "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "1.1.1.1"
+                ],
+                "outboundTag": "proxy"
+            },
             {
                 "type": "field",
                 "domain": [
