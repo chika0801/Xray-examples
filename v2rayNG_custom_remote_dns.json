@@ -33,6 +33,9 @@
                 "domain": [
                     "geosite:geolocation-!cn"
                 ],
+                "ip": [
+                    "geoip:!cn"
+                ],
                 "outboundTag": "proxy"
             },
             {
