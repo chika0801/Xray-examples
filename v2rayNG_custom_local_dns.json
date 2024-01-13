@@ -17,7 +17,7 @@
                 "queryStrategy": "UseIPv4"
             }
         ],
-        "queryStrategy": "UseIP"
+        "queryStrategy": "UseIPv4"
     },
     "routing": {
         "domainStrategy": "AsIs",
@@ -98,7 +98,7 @@
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIP"
+                "domainStrategy": "ForceIPv4"
             },
             "tag": "direct"
         },
