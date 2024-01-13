@@ -22,7 +22,7 @@
                 "queryStrategy": "UseIPv4"
             }
         ],
-        "queryStrategy": "UseIP"
+        "queryStrategy": "UseIPv4"
     },
     "routing": {
         "domainStrategy": "AsIs",
