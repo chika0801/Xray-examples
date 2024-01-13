@@ -18,8 +18,7 @@
                 "domains": [
                     "geosite:geolocation-!cn"
                 ],
-                "skipFallback": true,
-                "queryStrategy": "UseIPv4"
+                "skipFallback": true
             }
         ],
         "queryStrategy": "UseIPv4"
