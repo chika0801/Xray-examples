@@ -159,9 +159,6 @@
         },
         {
             "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "ForceIPv6v4"
-            },
             "tag": "direct"
         },
         {
