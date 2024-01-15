@@ -166,12 +166,6 @@
         },
         {
             "protocol": "dns",
-            "settings": {
-                "nonIPQuery": "drop"
-            },
-            "proxySettings": {
-                "tag": "direct"
-            },
             "tag": "dns-out"
         }
     ]
