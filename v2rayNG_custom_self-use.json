@@ -120,40 +120,6 @@
     ],
     "outbounds": [
         {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "",
-                        "port": 443,
-                        "users": [
-                            {
-                                "id": "chika",
-                                "encryption": "none",
-                                "flow": "xtls-rprx-vision"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "security": "tls",
-                "tlsSettings": {
-                    "serverName": "",
-                    "fingerprint": "chrome"
-                },
-                "sockopt": {
-                    "tcpMptcp": true,
-                    "tcpNoDelay": true
-                }
-            },
-            "mux": {
-                "enabled": true,
-                "concurrency": -1,
-                "xudpConcurrency": 16,
-                "xudpProxyUDP443": "reject"
-            },
             "tag": "proxy"
         },
         {
