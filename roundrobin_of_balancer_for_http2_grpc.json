@@ -66,33 +66,7 @@
             "tag": "out1"
         },
         {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "",
-                        "port": 443,
-                        "users": [
-                            {
-                                "id": "",
-                                "encryption": "none"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "grpc",
-                "grpcSettings": {
-                    "serviceName": "",
-                    "multiMode": true
-                },
-                "security": "tls",
-                "tlsSettings": {
-                    "serverName": "",
-                    "fingerprint": "chrome"
-                }
-            },
+            // same outbound configuration
             "tag": "out2"
         },
         {
