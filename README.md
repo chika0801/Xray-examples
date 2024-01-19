@@ -43,7 +43,8 @@
 ```
 
 > MPTCP 配置需在客户端，服务端同时启用<br>
-> 需要 Xray-core 版本 1.8.6 或更高。
+> 需要 Xray-core 版本 1.8.6 或更高<br>
+> 需要 Linux 内核版本 5.6 或更高
 
 :+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
 
