@@ -37,7 +37,7 @@
             "streamSettings": {
                 "network": "grpc",
                 "grpcSettings": {
-                    "serviceName": "chika" // gRPC 服务名称
+                    "serviceName": "lovelive" // 若两端填写 "lovelive" 和 "/lovelive" 将连接失败，若起始为斜杠时为自定义 path，例如在服务端填写 "/chika|riko"，客户端可填写 "/chika" 或 "/riko"
                 }
             },
             "sniffing": {
