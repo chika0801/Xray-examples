@@ -57,10 +57,7 @@
                 }
             },
             "mux": {
-                "enabled": true,
-                "concurrency": 8, // 建议启用 TCP Mux
-                "xudpConcurrency": 16, // 可选启用 UDP Mux
-                "xudpProxyUDP443": "reject"
+                "enabled": true // 建议启用 Mux
             },
             "tag": "proxy"
         },
