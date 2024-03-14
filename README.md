@@ -2,21 +2,19 @@
 
 | | 无需注册域名 | 解决 TLS in TLS | 自带多路复用 | 通过 CDN 访问 |
 | :--- | :---: | :---: | :---: | :---: |
-| **VLESS-Vision-TLS** | :x: | :heavy_check_mark: | :x: | :x: |
 | **VLESS-Vision-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
-| **VLESS-gRPC-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
-| **VLESS-HTTP2-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| **VLESS-Vision-TLS** | :x: | :heavy_check_mark: | :x: | :x: |
+| **VLESS-gRPC/HTTP2-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 | **VLESS-gRPC-TLS** | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
 | **VLESS-WebSocket/HTTPUpgrade-TLS** | :x: | :x: | :x: | :heavy_check_mark: |
 
 | | 使用 uTLS | 使用 Vision | 服务端 TLS 指纹 | Mux(TCP) | Mux(UDP) | MPTCP |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **VLESS-Vision-TLS** | 推荐使用 | 推荐使用 | Go | **2** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-Vision-REALITY** | 必选 | 推荐使用 | **1** | **2** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-gRPC-REALITY** | 必选 | 不能 | **1** | **3** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-HTTP2-REALITY** | 必选 | 不能 | **1** | **3** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-gRPC-TLS** | 推荐使用 | 不能 | Nginx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-WebSocket/HTTPUpgrade-TLS** | 推荐使用 | 不能 | Nginx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-Vision-REALITY** | 必选 | 建议使用 | **1** | **2** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-Vision-TLS** | 建议使用 | 建议使用 | Go | **2** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC/HTTP2-REALITY** | 必选 | 不能 | **1** | **3** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-TLS** | 建议使用 | 不能 | Nginx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-WebSocket/HTTPUpgrade-TLS** | 建议使用 | 不能 | Nginx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 **1：** 由 `"dest": "",` 目标网站决定，如偷自己时为Nginx<br>
 **2：** 使用Vision时不能<br>
