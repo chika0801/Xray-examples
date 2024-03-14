@@ -37,7 +37,7 @@
             "streamSettings": {
                 "network": "ws",
                 "wsSettings": {
-                    "path": "/chika"
+                    "path": "/lovelive"
                 }
             },
             "sniffing": {
