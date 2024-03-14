@@ -1,0 +1,72 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "direct"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "chika", // 与服务端一致
+                                "encryption": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/lovelive?ed=2048",
+                    "headers": {
+                        "host": "chika.example.com" // 由于在服务端 Nginx 配置中启用了 ssl_reject_handshake，此处必须填服务端 Nginx 配置中 server_name 的值
+                    }
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "",
+                    "fingerprint": "chrome"
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": 8, // 建议启用 TCP Mux
+                "xudpConcurrency": 16, // 可选启用 UDP Mux
+                "xudpProxyUDP443": "reject"
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
