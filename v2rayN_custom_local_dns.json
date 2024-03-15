@@ -12,14 +12,12 @@
         "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
-                "type": "field",
                 "domain": [
                     "geosite:category-ads-all"
                 ],
                 "outboundTag": "block"
             },
             {
-                "type": "field",
                 "domain": [
                     "geosite:geolocation-!cn"
                 ],
