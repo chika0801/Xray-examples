@@ -3,18 +3,10 @@
         "loglevel": "warning"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "port": "443",
                 "network": "udp",
-                "outboundTag": "block"
-            },
-            {
-                "ip": [
-                    "geoip:cn",
-                    "geoip:private"
-                ],
                 "outboundTag": "block"
             }
         ]
