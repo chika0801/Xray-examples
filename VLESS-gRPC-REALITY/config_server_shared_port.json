@@ -6,13 +6,11 @@
         "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
-                "type": "field",
                 "port": "443",
                 "network": "udp",
                 "outboundTag": "block"
             },
             {
-                "type": "field",
                 "ip": [
                     "geoip:cn",
                     "geoip:private"
