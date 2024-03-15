@@ -3,18 +3,10 @@
         "loglevel": "warning"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "port": "443",
                 "network": "udp",
-                "outboundTag": "block"
-            },
-            {
-                "ip": [
-                    "geoip:cn",
-                    "geoip:private"
-                ],
                 "outboundTag": "block"
             }
         ]
@@ -37,12 +29,14 @@
                 "security": "reality",
                 "realitySettings": {
                     "dest": "www.lovelive-anime.jp:443", // 目标网站最低标准：国外网站，支持 TLSv1.3、X25519 与 H2，域名非跳转用（主域名可能被用于跳转到 www）
-                    "serverNames": [ // 客户端可用的 serverName 列表，暂不支持 * 通配符
-                        "www.lovelive-anime.jp" // Chrome - 输入 "dest" 的网址 - F12 - 安全 - F5 - 主要来源（安全），填 证书 SAN 的值
+                    "serverNames": [ // 客户端可用的 serverName 列表，暂不支持 * 通配符，在 Chrome 里输入 "dest" 的网址 -> F12 -> 安全 -> F5 -> 主要来源（安全），填证书中 SAN 的值
+                        "www.lovelive-anime.jp",
+                        "lovelive-anime.jp"
                     ],
                     "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU", // 执行 xray x25519 生成，填 "Private key" 的值
-                    "shortIds": [ // 客户端可用的 shortId 列表，可用于区分不同的客户端
-                        "6ba85179e30d4fc2" // 0 到 f，长度为 2 的倍数，长度上限为 16，可留空，或执行 openssl rand -hex 8 生成
+                    "shortIds": [ // 客户端可用的 shortId 列表，可用于区分不同的客户端，0 到 f，长度为 2 的倍数，长度上限为 16，可留空，或执行 openssl rand -hex 1到8 生成
+                        "6ba85179e30d4fc2",
+                        "b9"
                     ]
                 },
                 "grpcSettings": {
