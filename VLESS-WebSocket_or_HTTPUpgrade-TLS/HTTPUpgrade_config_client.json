@@ -45,7 +45,7 @@
                 "network": "httpupgrade",
                 "httpupgradeSettings": {
                     "path": "/lovelive", // 与服务端一致
-                    "host": "chika.example.com;" // 由于在服务端 Nginx 配置中启用了 ssl_reject_handshake，此处必须填服务端 Nginx 配置中 server_name 的值
+                    "host": "chika.example.com;" // 由于在 Nginx 配置中启用了 ssl_reject_handshake，此处必须填 Nginx 配置中 server_name 的值
                 },
                 "security": "tls",
                 "tlsSettings": {
