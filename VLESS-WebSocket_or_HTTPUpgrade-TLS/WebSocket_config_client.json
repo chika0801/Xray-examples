@@ -46,7 +46,7 @@
                 "wsSettings": {
                     "path": "/lovelive?ed=2048", // 与服务端一致，建议增加 ?ed=2048 以启用 Early Data 降低延迟
                     "headers": {
-                        "host": "chika.example.com" // 由于在服务端 Nginx 配置中启用了 ssl_reject_handshake，此处必须填服务端 Nginx 配置中 server_name 的值
+                        "host": "chika.example.com" // 由于在 Nginx 配置中启用了 ssl_reject_handshake，此处必须填 Nginx 配置中 server_name 的值
                     }
                 },
                 "security": "tls",
