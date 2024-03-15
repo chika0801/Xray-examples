@@ -26,9 +26,9 @@
                         "chika.example.com", // 与 Nginx 配置中的 server_name 一致
                         "example.com"
                     ],
-                    "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
+                    "privateKey": "",
                     "shortIds": [
-                        "6ba85179e30d4fc2"
+                        ""
                     ]
                 }
             },
