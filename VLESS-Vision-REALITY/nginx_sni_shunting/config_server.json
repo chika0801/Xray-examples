@@ -2,18 +2,6 @@
     "log": {
         "loglevel": "warning"
     },
-    "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "ip": [
-                    "geoip:cn",
-                    "geoip:private"
-                ],
-                "outboundTag": "block"
-            }
-        ]
-    },
     "inbounds": [
         {
             "listen": "127.0.0.1",
@@ -22,7 +10,7 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "",
+                        "id": "chika",
                         "flow": "xtls-rprx-vision"
                     }
                 ],
@@ -62,7 +50,7 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "",
+                        "id": "chika",
                         "flow": "xtls-rprx-vision"
                     }
                 ],
