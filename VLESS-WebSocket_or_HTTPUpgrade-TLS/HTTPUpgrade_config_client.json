@@ -5,7 +5,6 @@
     "routing": {
         "rules": [
             {
-                "type": "field",
                 "ip": [
                     "geoip:private"
                 ],
