@@ -21,9 +21,9 @@
                 "security": "reality",
                 "realitySettings": {
                     "dest": "8002",
-                    "xver": 1,
+                    "xver": 1, // 发送 PROXY protocol
                     "serverNames": [
-                        "example.com"
+                        "example.com" // 与 Nginx 配置中的 server_name 一致
                     ],
                     "privateKey": "",
                     "shortIds": [
@@ -61,9 +61,9 @@
                 "security": "reality",
                 "realitySettings": {
                     "dest": "8004",
-                    "xver": 1,
+                    "xver": 1, // 发送 PROXY protocol
                     "serverNames": [
-                        "chika.example.com"
+                        "chika.example.com" // 与 Nginx 配置中的 server_name 一致
                     ],
                     "privateKey": "",
                     "shortIds": [
