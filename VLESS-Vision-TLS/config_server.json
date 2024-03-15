@@ -2,18 +2,6 @@
     "log": {
         "loglevel": "warning"
     },
-    "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "ip": [
-                    "geoip:cn",
-                    "geoip:private"
-                ],
-                "outboundTag": "block"
-            }
-        ]
-    },
     "inbounds": [
         {
             "listen": "0.0.0.0",
@@ -30,12 +18,12 @@
                 "fallbacks": [
                     {
                         "dest": "8001",
-                        "xver": 1
+                        "xver": 1 // 发送 PROXY protocol
                     },
                     {
                         "alpn": "h2",
                         "dest": "8002",
-                        "xver": 1
+                        "xver": 1 // 发送 PROXY protocol
                     }
                 ]
             },
