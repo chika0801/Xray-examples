@@ -55,7 +55,6 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
 
 ```jsonc
             {
-                "type": "field",
                 "domain": [
                     "geosite:openai"
                 ],
@@ -104,14 +103,12 @@ curl -sL "https://api.zeroteam.top/warp?format=sing-box" | grep -Eo --color=neve
         "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
-                "type": "field",
                 "domain": [
                     "geosite:openai"
                 ],
                 "outboundTag": "warp"
             },
             {
-                "type": "field",
                 "ip": [
                     "geoip:cn"
                 ],
