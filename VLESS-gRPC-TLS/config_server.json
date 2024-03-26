@@ -27,7 +27,7 @@
             "streamSettings": {
                 "network": "grpc",
                 "grpcSettings": {
-                    "serviceName": "lovelive" // 若起始为斜杠时为自定义 path，例如在服务端填写 "/chika|riko"，客户端可填写 "/chika" 或 "/riko"，客户端填写 "chika" 或 "riko" 将连接失败
+                    "serviceName": "lovelive" // 若起始为斜杠时为自定义 path，至少要两个斜杠，例如在服务端填写 "/lovelive/sif/chika|riko"，客户端可填写 "/lovelive/sif/chika" 或 "/lovelive/sif/riko"，客户端填写 "/lovelive/sif" 将连接失败，在 Nginx 配置中填写 location /lovelive/sif 可同时兼容多个 path，否则填写 location /lovelive/sif/chika 只兼容其中一个 path
                 }
             },
             "sniffing": {
