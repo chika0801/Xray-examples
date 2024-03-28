@@ -53,12 +53,6 @@
                     "fingerprint": "chrome"
                 }
             },
-            "mux": {
-                "enabled": true, // 建议启用 Mux
-                "concurrency": 8,
-                "xudpConcurrency": 16,
-                "xudpProxyUDP443": "reject"
-            },
             "tag": "proxy"
         },
         {
