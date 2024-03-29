@@ -1,0 +1,178 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "https+local://8.8.8.8/dns-query"
+        ],
+        "clientIp": ""
+    },
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "domain": [
+                    "geosite:netflix"
+                ],
+                "user": [
+                    "chika"
+                ],
+                "outboundTag": "taipei"
+            },
+            {
+                "domain": [
+                    "geosite:netflix"
+                ],
+                "outboundTag": "singapore"
+            },
+            {
+                "domain": [
+                    "geosite:openai"
+                ],
+                "outboundTag": "tokyo"
+            },
+            {
+                "ip": [
+                    "geoip:cn"
+                ],
+                "outboundTag": "tokyo"
+            },
+            {
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "honoka",
+                        "flow": "xtls-rprx-vision"
+                    },
+                    {
+                        "id": "umi",
+                        "flow": "xtls-rprx-vision"
+                    },
+                    {
+                        "id": "chika",
+                        "flow": "xtls-rprx-vision",
+                        "email": "chika"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "dest": "/dev/shm/nginx.sock",
+                    "xver": 1,
+                    "serverNames": [
+                        "example.com",
+                        "www.example.com"
+                    ],
+                    "privateKey": "",
+                    "shortIds": [
+                        ""
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIPv4"
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpFastOpen": true
+                }
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        },
+        {
+            "protocol": "shadowsocks",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "",
+                        "port": 80,
+                        "method": "2022-blake3-aes-128-gcm",
+                        "password": ""
+                    }
+                ]
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpMptcp": true,
+                    "tcpNoDelay": true
+                }
+            },
+            "tag": "taipei"
+        },
+        {
+            "protocol": "shadowsocks",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "",
+                        "port": 80,
+                        "method": "2022-blake3-aes-128-gcm",
+                        "password": ""
+                    }
+                ]
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpMptcp": true,
+                    "tcpNoDelay": true
+                }
+            },
+            "tag": "singapore"
+        },
+        {
+            "protocol": "shadowsocks",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "",
+                        "port": 80,
+                        "method": "2022-blake3-aes-128-gcm",
+                        "password": ""
+                    }
+                ]
+            },
+            "tag": "tokyo"
+        }
+    ],
+    "policy": {
+        "levels": {
+            "0": {
+                "handshake": 2,
+                "connIdle": 120
+            }
+        }
+    }
+}
