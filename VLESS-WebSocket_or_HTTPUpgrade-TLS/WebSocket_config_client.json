@@ -45,9 +45,7 @@
                 "network": "ws",
                 "wsSettings": {
                     "path": "/lovelive?ed=2560", // 与服务端一致，建议增加 ?ed=2560 以启用 0-RTT 降低延迟
-                    "headers": {
-                        "host": "chika.example.com" // 若 "address": "" 中填的是 VPS 的 IP，此处必须填 Nginx 配置中 server_name 的值，否则会因在 Nginx 配置中启用了 ssl_reject_handshake 而连接失败
-                    }
+                    "host": "chika.example.com" // 若 "address": "" 中填的是 VPS 的 IP，此处必须填 Nginx 配置中 server_name 的值，否则会因在 Nginx 配置中启用了 ssl_reject_handshake 而连接失败
                 },
                 "security": "tls",
                 "tlsSettings": {
