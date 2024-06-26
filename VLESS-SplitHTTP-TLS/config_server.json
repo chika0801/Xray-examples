@@ -1,0 +1,53 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "rules": [
+            {
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 8001,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "chika" // 长度为 1-30 字节的任意字符串，或执行 xray uuid 生成
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "splithttp",
+                "splithttpSettings": {
+                    "path": "/lovelive"
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ]
+}
