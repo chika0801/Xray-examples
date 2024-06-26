@@ -1,0 +1,62 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "rules": [
+            {
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "direct"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "chika", // 与服务端一致
+                                "encryption": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "splithttp",
+                "splithttpSettings": {
+                    "path": "/lovelive"
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "",
+                    "fingerprint": "chrome"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
