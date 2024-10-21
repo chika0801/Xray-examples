@@ -50,7 +50,6 @@
                 "security": "tls",
                 "tlsSettings": {
                     "serverName": "",
-                    "fingerprint": "chrome",
                     "alpn": [
                         "h3"
                     ]
