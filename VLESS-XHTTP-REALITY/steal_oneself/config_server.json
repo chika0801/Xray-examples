@@ -19,6 +19,14 @@
                 "xhttpSettings": {
                     "path": "/lovelive"
                 }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
             }
         },
         {
@@ -49,14 +57,6 @@
                         ""
                     ]
                 }
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ]
             }
         }
     ],
