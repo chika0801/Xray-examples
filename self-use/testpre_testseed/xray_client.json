@@ -1,0 +1,68 @@
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "address": "",
+                "port": 443,
+                "id": "chika",
+                "encryption": "",
+                "testpre": 5,
+                "Testseed": [120,341,662,127]
+            },
+            "streamSettings": {
+                "network": "xhttp",
+                "xhttpSettings": {
+                    "mode": "stream-up",
+                    "path": "/lovelive",
+                    "xmux": {
+                        "maxConcurrency": "16-32"
+                    }
+                },
+                "security": "reality",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "serverName": "",
+                    "publicKey": "",
+                    "shortId": ""
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": -1,
+                "xudpConcurrency": 16,
+                "xudpProxyUDP443": "reject"
+            }
+        }
+    ]
+
+
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "address": "",
+                "port": 8443,
+                "id": "chika",
+                "encryption": "",
+                "flow": "xtls-rprx-vision",
+                "testpre": 5,
+                "Testseed": [580,310,712,92]
+            },
+            "streamSettings": {
+                "network": "raw",
+                "security": "reality",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "serverName": "",
+                    "publicKey": "",
+                    "shortId": ""
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": -1,
+                "xudpConcurrency": 16,
+                "xudpProxyUDP443": "reject"
+            }
+        }
+    ]
