@@ -1,0 +1,179 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "https+local://1.1.1.1/dns-query"
+        ]
+    },
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "domain": [
+                    "geosite:disney",
+                    "geosite:netflix"
+                ],
+                "outboundTag": "singapore"
+            },
+            {
+                "ip": [
+                    "geoip:cn"
+                ],
+                "outboundTag": "tokyo"
+            },
+            {
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": "@xhttp"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "raw",
+                "security": "reality",
+                "realitySettings": {
+                    "target": "/dev/shm/nginx.sock",
+                    "xver": 1,
+                    "serverNames": [
+                        "",
+                        ""
+                    ],
+                    "privateKey": "",
+                    "shortIds": [
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "listen": "@xhttp",
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "chika",
+                        "Testseed": [456,163,92,221]
+                    }
+                ],
+                "decryption": ""
+            },
+            "streamSettings": {
+                "network": "xhttp",
+                "xhttpSettings": {
+                    "path": "/lovelive"
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 8443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "chika",
+                        "flow": "xtls-rprx-vision",
+                        "Testseed": [123,421,512,66]
+                    }
+                ],
+                "decryption": ""
+            },
+            "streamSettings": {
+                "network": "raw",
+                "security": "reality",
+                "realitySettings": {
+                    "target": "/dev/shm/nginx.sock",
+                    "xver": 1,
+                    "serverNames": [
+                        "",
+                        ""
+                    ],
+                    "privateKey": "",
+                    "shortIds": [
+                        ""
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "direct",
+            "settings": {
+                "domainStrategy": "ForceIPv4"
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpFastOpen": true
+                }
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "block",
+            "tag": "block"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "address": "",
+                "port": 80,
+                "id": "",
+                "encryption": "",
+                "flow": "xtls-rprx-vision"
+            },
+            "tag": "singapore"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "address": "",
+                "port": 80,
+                "id": "",
+                "encryption": "",
+                "flow": "xtls-rprx-vision"
+            },
+            "tag": "tokyo"
+        }
+    ],
+    "policy": {
+        "levels": {
+            "0": {
+                "handshake": 2,
+                "connIdle": 120
+            }
+        }
+    }
+}
