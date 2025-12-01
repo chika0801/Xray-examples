@@ -67,8 +67,7 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "chika",
-                        "Testseed": [456,163,92,221]
+                        "id": "chika"
                     }
                 ],
                 "decryption": ""
@@ -97,7 +96,7 @@
                     {
                         "id": "chika",
                         "flow": "xtls-rprx-vision",
-                        "Testseed": [123,421,512,66]
+                        "testseed": [123,421,512,66]
                     }
                 ],
                 "decryption": ""
